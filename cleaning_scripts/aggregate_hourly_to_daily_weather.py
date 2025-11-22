@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # 📁 Load hourly weather data
-df = pd.read_csv('nyc_weather_2013_2023_cleaned_mapped.csv', parse_dates=['time'])
+df = pd.read_csv('nyc_weather_2020_2023_cleaned_mapped.csv', parse_dates=['time'])
 
 # --- 1️⃣ Optional: Convert suspicious Kelvin-like temps to °C ---
 # (e.g., 249–273 K -> -24 to 0 °C)

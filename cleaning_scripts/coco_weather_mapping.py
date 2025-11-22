@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("nyc_weather_2013_2023_cleaned.csv", parse_dates=['time'])
+df = pd.read_csv("nyc_weather_2020_2023_cleaned.csv", parse_dates=['time'])
 
 # Ensure 'coco' is numeric (float -> Int64)
 df['coco'] = pd.to_numeric(df['coco'], errors='coerce').astype('Int64')
@@ -32,5 +32,5 @@ print("\n🌤️ Weather code counts:")
 print(df['coco'].value_counts(dropna=False).sort_index())
 
 # Save cleaned data
-df.to_csv("nyc_weather_2013_2023_cleaned_mapped.csv", index=False)
-print("✅ Cleaned weather data saved as 'nyc_weather_2013_2023_cleaned_mapped.csv'")
+df.to_csv("nyc_weather_2020_2023_cleaned_mapped.csv", index=False)
+print("✅ Cleaned weather data saved as 'nyc_weather_2020_2023_cleaned_mapped.csv'")

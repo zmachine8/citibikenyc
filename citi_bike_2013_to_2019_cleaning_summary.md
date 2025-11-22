@@ -26,4 +26,4 @@
 | 201602-citibike-tripdata_1_cleaned.csv |              0.05 |                        283 |                    0 |
 
 ---
-_Generated automatically by analyze_cleaning_report.py_
+_Generated automatically by cleaning_report.py_

@@ -27,7 +27,7 @@ print(f"Average % dropped/file:  {df['percent_dropped'].mean():.3f}%")
 # --- 3️⃣ Where did most drops happen? ---
 worst_files = df.sort_values('percent_dropped', ascending=False).head(10)
 print("\n--- Top 10 files with highest % dropped ---")
-print(worst_files[['file', 'percent_dropped', 'dropped_invalid_duration', 'dropped_duplicates']])
+print(worst_files[['file', 'percent_dropped', 'dropped_invalid_duration']])
 
 # --- 4️⃣ Plot percentage dropped per file ---
 plt.figure(figsize=(10, 4))
@@ -40,7 +40,7 @@ plt.show()
 
 # --- 5️⃣ Plot counts of drop types ---
 plt.figure(figsize=(8, 4))
-df[['dropped_invalid_duration', 'dropped_duplicates']].sum().plot(kind='bar', color=['tomato', 'orange'])
+df[['dropped_invalid_duration']].sum().plot(kind='bar', color=['tomato'])
 plt.title('Total Dropped Rows by Reason')
 plt.ylabel('Count')
 plt.tight_layout()
@@ -59,7 +59,7 @@ with open(md_path, "w", encoding="utf-8") as f:
     f.write(f"**Average % dropped per file:** {df['percent_dropped'].mean():.4f}%\n\n")
 
     f.write("## 🔟 Top 10 Files by Percent Dropped\n\n")
-    f.write(worst_files[['file', 'percent_dropped', 'dropped_invalid_duration', 'dropped_duplicates']].to_markdown(index=False))
+    f.write(worst_files[['file', 'percent_dropped', 'dropped_invalid_duration']].to_markdown(index=False))
     f.write("\n\n---\n")
     f.write("_Generated automatically by cleaning_report.py_\n")
 
