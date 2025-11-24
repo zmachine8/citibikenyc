@@ -29,12 +29,17 @@ for file in files:
     df['started_at'] = pd.to_datetime(df['started_at'], errors='coerce')
     df = df.dropna(subset=['started_at', 'tripduration'])
 
-    # --- Clean tripduration ---
+     # --- Clean tripduration ---
     before = len(df)
     df = df[(df['tripduration'] > 0) & (df['tripduration'] <= 86400)]  # <= 24h
     dropped_duration = before - len(df)
 
-    # --- Save cleaned version ---
+    # --- Drop duplicates ---
+    before = len(df)
+    df = df.drop_duplicates()
+    dropped_dupes = before - len(df)
+
+     # --- Save cleaned version ---
     out_path = os.path.join(output_folder, name)
     df.to_csv(out_path, index=False)
     cleaned_rows = len(df)
@@ -45,6 +50,7 @@ for file in files:
 
     print(f"✅ {cleaned_rows:,}/{total_rows:,} rows kept ({percent_dropped}% dropped)")
     print(f"   - Dropped {dropped_duration} invalid durations")
+    print(f"   - Dropped {dropped_dupes} duplicates")
 
     report.append({
         'file': name,
@@ -52,7 +58,8 @@ for file in files:
         'rows_cleaned': cleaned_rows,
         'dropped_total': dropped_total,
         'percent_dropped': percent_dropped,
-        'dropped_invalid_duration': dropped_duration
+        'dropped_invalid_duration': dropped_duration,
+        'dropped_duplicates': dropped_dupes
     })
 
 # --- Combine report into a DataFrame ---
