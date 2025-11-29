@@ -30,7 +30,7 @@ def get_season(date):
 df["season"] = df["time"].apply(get_season)
 
 # --- Save to new CSV ---
-df.to_csv("weather_with_days.csv", index=False)
+df.to_csv("weather_with_days_20-23.csv", index=False)
 
-print("✅ File saved as weather_with_days.csv")
+print("✅ File saved as weather_with_days_20-23.csv")
 print(df.head())

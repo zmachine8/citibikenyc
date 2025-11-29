@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 
 # 📁 Path to your cleaning report CSV
-report_path = r"C:\Users\rzukk\Downloads\cleaning_report.csv"
+report_path = r"C:\Users\rzukk\Downloads\cleaning_report_2.csv"
 
 # --- 1️⃣ Load the report ---
 df = pd.read_csv(report_path)
@@ -61,7 +61,7 @@ with open(md_path, "w", encoding="utf-8") as f:
     f.write("## 🔟 Top 10 Files by Percent Dropped\n\n")
     f.write(worst_files[['file', 'percent_dropped', 'dropped_invalid_duration', 'dropped_duplicates']].to_markdown(index=False))
     f.write("\n\n---\n")
-    f.write("_Generated automatically by analyze_cleaning_report.py_\n")
+    f.write("_Generated automatically by cleaning_report.py_\n")
 
 print(f"📝 Markdown report saved as: {md_path}")
 
