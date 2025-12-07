@@ -15,12 +15,10 @@ To plan resources effectively, the organization needs a clear understanding of w
 ---
 
 ## **How to Reproduce the Analysis**
-
-### **1. Install Dependencies**
-All required packages are listed in `requirements.txt`.
-
-```bash
-pip install -r requirements.txt
+### 1. Install Dependencies**
+### 2. Prepare & Clean the Data
+### 3. Run the Modelling Notebooks
+### 4. Review the Final Outputs
 
 # Repository Structure
 📁 cleaning_scripts/  
