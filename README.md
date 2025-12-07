@@ -16,6 +16,7 @@ overall service availability. To plan resources effectively, the organization ne
 -  📁 other_scripts folder - misc scripts used in data cleaning and processing
 -  📄 C4_report.pdf - Project report
 -  📄 README.md - Readme file for project (this)
+-  📄 DATA_CLEANING_README.md - Readme file for data cleaning 
 -  📄 citi_bike_2013_to_2019_cleaning_summary.md - Cleaning report for 2013-2019 data
 -  📄 citi_bike_2020_to_2023_cleaning_summary.md - Cleaning report for 2020-2023 data
 
